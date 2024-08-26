@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Página Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            height: 80px;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        header img {
+            height: 100%; /* Ajusta a imagem para a altura do cabeçalho */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        .icons a i {
+            margin-right: 8px; /* Espaço entre o ícone e o texto */
+        }
+
+        .icons a:hover {
+            color: #ccc;
+        }
+
+        main {
+            margin-top: 115px; /* Ajuste para compensar a altura do cabeçalho fixo */
+            display: flex;
+            flex: 1;
+        }
+
+        .news {
+            flex: 3;
+            padding: 20px;
+        }
+
+        .news article {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .news img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .news h2 {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        .news p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .preferences {
+            width: 300px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+        }
+
+        .preferences h3 {
+            font-size: 18px;
+            color: #000;
+        }
+
+        .preferences button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .preferences button:hover {
+            background-color: #45a049;
+        }
+
+        .logout {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Estilos do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .modal-buttons button:hover {
+            background-color: #45a049;
+        }
+
+        .modal-buttons button.secondary {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .modal-buttons button.secondary:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/diadianoticia.png" alt="Logo">
+        <h1 id="header-title">Olá</h1>
+        <div class="icons">
+            <a href="conta.html">
+                <i class="fas fa-user"></i> Conta
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <aside class="preferences">
+            <h3>Suas preferências:</h3>
+            <ul>
+                <li><button>Política</button></li>
+                <br>
+                <li><button>Esportes</button></li>
+                <br>
+                <li><button>Entretenimento</button></li>
+                <br>
+                <li><button>Economia</button></li>
+                <br>
+                <li><button>Saúde</button></li>
+                <br>
+                <li><button>Tecnologia</button></li>
+            </ul>
+        </aside>
+
+        <section class="news" id="news-container">
+            <!-- As notícias serão exibidas aqui -->
+        </section>
+    </main>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Você gostaria de fazer login?</h2>
+            <p>Fazer login permite que você personalize suas preferências e receba notícias mais relevantes para você. Você pode optar por fazer login mais tarde.</p>
+            <div class="modal-buttons">
+                <button id="login-button">Fazer Login</button>
+                <button id="later-button" class="secondary">Fazer Depois</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="news.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('login-modal');
+            const closeBtn = document.querySelector('.close');
+            const loginBtn = document.getElementById('login-button');
+            const laterBtn = document.getElementById('later-button');
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            // Verifica se o usuário está logado
+            if (!user) {
+                modal.style.display = 'block';
+            } else {
+                document.getElementById('header-title').textContent = `Bem-vindo(a), ${user.name.split(' ')[0]}`;
+            }
+
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            };
+
+            loginBtn.onclick = function() {
+                window.location.href = 'login.html';
+            };
+
+            laterBtn.onclick = function() {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>
